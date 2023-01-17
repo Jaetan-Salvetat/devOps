@@ -1,2 +1,2 @@
-- name: GitHub Action for Android Lint
+- name: Lint
   uses: yutailang0119/action-android-lint@v3.1.0
