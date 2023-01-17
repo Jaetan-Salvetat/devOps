@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "123923452256",
+    "project_id": "sample-77b02",
+    "storage_bucket": "sample-77b02.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123923452256:android:01b04f77a4d7458de20e05",
+        "android_client_info": {
+          "package_name": "com.nanaka.jetpackcompose"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123923452256-i97hevia50l4c5932q7r496s67hqe7jn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBoWqgIkvNnjGuSTMD9vbnVY2-bhYQ1nQ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123923452256-i97hevia50l4c5932q7r496s67hqe7jn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
