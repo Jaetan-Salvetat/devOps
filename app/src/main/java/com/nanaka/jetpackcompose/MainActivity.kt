@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackComposeTheme {
-                // A surface container using the 'background' color from the theme
+                var Test = Text("")
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                         onValueChange = { q = it },
                         modifier = Modifier.width(IntrinsicSize.Min)
                     )
-                    Text("Test")
+                    Text("Test" )
                 }
             }
         }
