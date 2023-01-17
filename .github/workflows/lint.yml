@@ -1,2 +1,2 @@
-- name: Lint
+- name: lint
   uses: yutailang0119/action-android-lint@v3.1.0
