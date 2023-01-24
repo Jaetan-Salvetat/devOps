@@ -23,9 +23,14 @@ jobs:
       #Setup
       - name: Checkout
         uses: actions/checkout@v1
-      #Unit tests
+      - name: "Run UI Tests"
+        uses: vgaidarji/android-github-actions-emulator@v1.0.1
+      #Android unit tests
       - name: Unit Test
         run: ./gradlew connectedAndroidTest
+      #Unit tests
+      - name: Unit Test
+        run: ./gradlew test
       - name: Android Test Report
         uses: asadmansr/android-test-report-action@v1.2.0
         if: ${{ always() }}
