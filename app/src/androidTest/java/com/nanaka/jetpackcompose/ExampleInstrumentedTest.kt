@@ -23,7 +23,7 @@ class ExampleInstrumentedTest {
     }
 
     @Test
-    fun testShouldThrowError() {
+    fun androidTestShouldThrowError() {
         assertTrue("this test should throw an error", false)
     }
 }
