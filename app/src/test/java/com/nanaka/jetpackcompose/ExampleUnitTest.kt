@@ -12,6 +12,10 @@ import org.junit.Assert.*
 class ExampleUnitTest {
     @Test
     fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+        assertEquals("4 & 2 + 2 no be equals", 4, 2 + 2)
+    }
+    @Test
+    fun testShouldThrowError() {
+        assertTrue("this test should throw an error", false)
     }
 }
