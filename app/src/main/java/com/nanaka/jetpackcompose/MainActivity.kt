@@ -22,12 +22,11 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             JetpackComposeTheme {
-                var Test = Text("")
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    var q by remember { mutableStateOf("") }
+                    var q by remember {mutableStateOf("")}
 
                     TextField(
                         value = q,
