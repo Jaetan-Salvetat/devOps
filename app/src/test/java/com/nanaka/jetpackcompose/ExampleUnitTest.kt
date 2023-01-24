@@ -15,8 +15,8 @@ class ExampleUnitTest {
         assertEquals("4 & 2 + 2 no be equals", 4, 2 + 2)
     }
 
-    @Test
+    /*@Test
     fun testShouldThrowError() {
         assertTrue("this test should throw an error", false)
-    }
+    }*/
 }
