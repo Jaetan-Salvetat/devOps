@@ -11,7 +11,6 @@ jobs:
         uses: actions/checkout@master
         with:
           fetch-depth: 1
-
       #Linter
       - name: ktlint
         uses: ScaCap/action-ktlint@master
@@ -20,7 +19,8 @@ jobs:
           reporter: github-pr-review
   test:
     #Setup
-    - uses: actions/checkout@v1
+    - name: Checkout
+      uses: actions/checkout@v1
     #Unit tests
     - name: Unit Test
       run: ./gradlew testDebugUnitTest
