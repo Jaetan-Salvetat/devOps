@@ -22,12 +22,21 @@ jobs:
     steps:
       #Setup
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: "Run UI Tests"
-        uses: vgaidarji/android-github-actions-emulator@v1.0.1
+        uses: actions/checkout@v
+      - name: Run emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 23
+          target: default
+          arch: x86
+          profile: Nexus 6
+          script: ./gradlew connectedCheck --stacktrace
       #Android unit tests
       - name: Unit Test
         run: ./gradlew connectedAndroidTest
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
       #Unit tests
       - name: Unit Test
         run: ./gradlew test
