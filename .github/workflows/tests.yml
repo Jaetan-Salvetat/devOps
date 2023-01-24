@@ -4,35 +4,35 @@ on: [push]
   #types: [ closed ]
 
 jobs:
-test:
-  name: Tests
-  #if: ${{ github.event.pull_request.merged }}
-  runs-on: ubuntu-latest
-  strategy:
-    matrix:
-      api-level: [ 21, 23, 29 ]
-      target: [ default, google_apis ]
-  steps:
-    #Setup
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Run emulator
-      uses: reactivecircus/android-emulator-runner@v2
-      with:
-        api-level: ${{ matrix.api-level }}
-        target: ${{ matrix.target }}
-        arch: x86_64
-        profile: Nexus 6
-        script: ./gradlew connectedCheck
-    #Android unit tests
-    - name: Android Unit Test
-      run: ./gradlew connectedAndroidTest
-    - name: Android Test Report
-      uses: asadmansr/android-test-report-action@v1.2.0
-      if: ${{ always() }}
-    #Unit tests
-    - name: Unit Test
-      run: ./gradlew test
-    - name: Test Report
-      uses: asadmansr/android-test-report-action@v1.2.0
-      if: ${{ always() }}
+  test:
+    name: Tests
+    #if: ${{ github.event.pull_request.merged }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        api-level: [ 21, 23, 29 ]
+        target: [ default, google_apis ]
+    steps:
+      #Setup
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Run emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: ${{ matrix.target }}
+          arch: x86_64
+          profile: Nexus 6
+          script: ./gradlew connectedCheck
+      #Android unit tests
+      - name: Android Unit Test
+        run: ./gradlew connectedAndroidTest
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
+      #Unit tests
+      - name: Unit Test
+        run: ./gradlew test
+      - name: Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{ always() }}
