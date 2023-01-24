@@ -26,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    var q by remember {mutableStateOf("")}
+                    var q by remember { mutableStateOf("") }
 
                     TextField(
                         value = q,
