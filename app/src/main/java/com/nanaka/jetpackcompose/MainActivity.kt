@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
                         onValueChange = { q = it },
                         modifier = Modifier.width(IntrinsicSize.Min)
                     )
-                    Text("Test" )
+                    Text("Test")
                 }
             }
         }
