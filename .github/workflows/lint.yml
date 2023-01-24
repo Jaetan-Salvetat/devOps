@@ -14,16 +14,7 @@ jobs:
       - uses: reviewdog/action-setup@v1
         with:
           reviewdog_version: latest
-      - name: Cache Gradle Files
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches/
-            ~/.gradle/wrapper/
-          key: cache-gradle
-      - name: Run Gradle tasks
-        run: ./gradlew detekt
-        continue-on-error: true
-      - name: Stop Gradle
-        run: ./gradlew --stop
+      - name: Build
+        run: ~/.gradlew build
       - name: Run reviewdog
+        run: ~/.gradlew lint
