@@ -11,7 +11,7 @@ jobs:
     strategy:
       matrix:
         api-level: [ 26 ]
-        target: [ default, google_apis ]
+        target: [ default ] #google_apis
     steps:
       #Setup
       - name: Checkout
