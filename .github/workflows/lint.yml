@@ -1,6 +1,7 @@
 name: Linter
 
 on:
+  branch: "**"
   pull_request:
     paths:
       - .github/workflows/ktlint.yml
