@@ -1,38 +1,20 @@
 name: Unit Tests
 on: [push]
-  #pull_request:
-  #types: [ closed ]
+#pull_request:
+#types: [ closed ]
 
 jobs:
   test:
-    name: Tests
     #if: ${{ github.event.pull_request.merged }}
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        api-level: [ 26 ]
-        target: [ default ] #google_apis
+    runs-on: ubuntu-latest
     steps:
-      #Setup
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Run emulator
-        uses: reactivecircus/android-emulator-runner@v2
+      # Check out the repository
+      - uses: actions/checkout@v2
+
+      # Run the Firebase Test Lab Action
+      - name: Run tests on Firebase Test Lab
+        uses: asadmansr/Firebase-Test-Lab-Action@v1.0
         with:
-          api-level: ${{ matrix.api-level }}
-          target: ${{ matrix.target }}
-          arch: x86_64
-          profile: Nexus 6
-          script: ./gradlew connectedCheck
-      #Android unit tests
-      - name: Android Unit Test
-        run: ./gradlew connectedAndroidTest
-      - name: Android Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
-        #if: ${{ always() }}
-      #Unit tests
-      - name: Unit Test
-        run: ./gradlew test
-      - name: Test Report
-        uses: asadmansr/android-test-report-action@v1.2.0
-        #if: ${{ always() }}
+          arg-spec: 'device_options.yml:android-pixel-4'
+        env:
+          SERVICE_ACCOUNT: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
