@@ -21,4 +21,9 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.nanaka.jetpackcompose", appContext.packageName)
     }
+
+    @Test
+    fun androidTestShouldThrowError() {
+        assertTrue("this test should throw an error", false)
+    }
 }
